@@ -63,6 +63,7 @@ function time(){
         theTime.innerText = sec--;
         console.log(sec);
         if(sec == 0){
+            localStorage.setItem("score-memory-game", score);
             return window.location.assign("/result.html");
         }
     },1000)
