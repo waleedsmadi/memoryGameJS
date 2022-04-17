@@ -2,11 +2,13 @@
 const userName = document.querySelector("[data-name]"),
       theTime = document.querySelector("[data-time]"),
       theScore = document.querySelector("[data-score]"),
-      boxes = Array.from(document.querySelectorAll(".box"));
+      boxes = Array.from(document.querySelectorAll(".box")),
+      theUsernameText = localStorage.getItem("username");
 
 
 
-// setting 
+// setting
+userName.innerText = theUsernameText; 
 let activeClick = false;
 let counterPic = 0;
 let score = 0;
@@ -28,6 +30,7 @@ function startGame(){
     counterPic = 0;
     score = 0;
     sec = 30;
+
 
 
 
@@ -58,6 +61,7 @@ function startGame(){
 function time(){
     setInterval(function(){
         theTime.innerText = sec--;
+        console.log(sec);
         if(sec == 0){
             return window.location.assign("/result.html");
         }
